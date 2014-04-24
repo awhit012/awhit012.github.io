@@ -1,5 +1,9 @@
+body{
+    background-color: #eee;
+}
+
 p{
-	color:gray;
+	color:green;
 	font-family: 'Helvetica';
 }
 
@@ -8,5 +12,5 @@ p{
 }
 
 #fun{
-	font-family: 'Comic Sans'
+	font-family: 'Comic Sans';
 }
