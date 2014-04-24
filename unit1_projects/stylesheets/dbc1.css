@@ -1,16 +1,13 @@
 body{
-    background-color: #eee;
+	background-color: gray;
 }
-
 p{
-	color:green;
-	font-family: 'Helvetica';
+	font-family: 'Courier';
 }
-
 .red{
-	color:gray;
+	color: green;
 }
 
 #fun{
-	font-family: 'Comic Sans';
+	font-family: Impact;
 }
