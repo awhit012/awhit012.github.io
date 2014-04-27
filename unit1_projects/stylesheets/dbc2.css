@@ -50,3 +50,12 @@ a:link{
 	height:100%;
 	overflow: hidden;
 }
+
+li:first-child{
+	font-family: impact;
+}
+
+li:nth-child(3){
+	font-family: impact;
+	color: #944DDB;
+}
