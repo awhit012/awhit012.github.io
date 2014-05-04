@@ -1,16 +1,12 @@
 
 .header {
-    text-align: center; 
+    text-align: left; 
     font-family: Ubuntu;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    margin: 5%;
 
 }
 
-article {
-    font-family: Garamond, serif;
-    margin-left: 5%;
-    margin-right: 5%;
-}
 .my_pic {
     border: solid black 2px;
     display: block;
@@ -18,4 +14,52 @@ article {
     margin-right: auto;
     width: 90%;
     border-radius: 10px;
+}
+
+
+.sidebar {
+    width: auto;
+    height: auto;
+    float: right;
+    border: solid black 2px;
+    margin: 5%;
+    border-radius: 10px;
+}
+.icon_section {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin-right: 25%;
+    margin-left: -15%;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
+article {
+    font-family: Garamond, serif;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+footer {
+    border: solid black 2px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-family: Ubuntu;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    margin: 5%;
+    margin-top: 10%
 }
