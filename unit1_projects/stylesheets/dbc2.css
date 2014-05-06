@@ -58,6 +58,7 @@ li:first-child{
 li:nth-child(3){
 	font-family: impact;
 	color: #944DDB;
+<<<<<<< HEAD
 }
 
 [data-icon]:before {
@@ -74,3 +75,6 @@ li:nth-child(3){
   top: -9999px;
   left: -9999px;
 }
+=======
+}
+>>>>>>> d0909472dc458f91e54a0f839ef65729a0c5a274
