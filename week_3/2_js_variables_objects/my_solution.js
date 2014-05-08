@@ -33,7 +33,7 @@ var terah = {
       adam [spouse] = terah
 7. Add a children property to terah and and use object literal notation to assign 
    this variable the value of a JavaScript Object object with no properties
-    terah[children] = []
+    
 8. Add a carson property to the value of the terah children property and assign it 
   the value of an object with the property name with a value of "Carson".
     terah [children] = carson
@@ -51,19 +51,59 @@ var terah = {
 // __________________________________________
 // Write your code below.
 
-var adam = {
-  
-};
+var adam = {};
 
 adam.name = 'Adam';
 
-//terah.spouse = 'Adam';
+terah.spouse = adam; 
+
+terah.weight = 125;
+
+delete terah.eyeColor;
+
+adam.spouse = terah;
+
+var children = {};
+
+terah.children = children;
+
+var carson = {};
+
+terah.children.carson = carson;
+
+terah.children.carson.name = 'Carson';
+
+var carter = {};
+
+terah.children.carter = carter;
+
+terah.children.carter.name = 'Carter';
+
+var colton = {};
+
+terah.children.colton = colton;
+
+terah.children.colton.name = 'Colton';
+
+adam.children = terah.children;
+
+
+
+
+
 
 
 
 // __________________________________________
 // Reflection: Use the reflection guidelines
 // 
+// This was a really fun excercize once I figured out some logistical issues. 
+// I knew almost nothing about manipulating objects in JS and now I feel like I have a 
+// pretty good grasp. I have done a bit of that using Ruby so I caught on fast. It took 
+// me a minute to figure out the logic with the nested objects, and figuring it out was
+// exciting. It was helpful that the examples are actually someones kids. I used Stack 
+// Overflow to get some quick answers for syntax but the one explanation DBC provided 
+// were great. 
 // 
 // 
 // 
