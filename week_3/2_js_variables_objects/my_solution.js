@@ -1,109 +1,75 @@
-
-// This is a Solo Challenge. 
-
-// There is a section below where you will write your code.
-// Do not alter this object here.
+// I worked by myself on this challenge.
 
 
-var terah = {
-  name: "Terah",
-  age: 32,
-  height: 66,
-  weight: 130,
-  hairColor: "brown",
-  eyeColor: "brown"
-};
-/* Pseudocode Section - write pseudocode for each challenge below.
-1. Define a variable adam and use object literal notation to assign this variable 
-   the value of a JavaScript Object object with no properties.
 
-   var adam =  {}
 
-2. Give adam a name property with the value "Adam".
-
-    adam [name] = adam
-3. Add a spouse property to terah and assign it the value of adam.
-   terah[spouse]= adam
-
-4. Change the value of the terah weight property to 125.
-   tarah [weight] = 125
-5. Remove the eyeColor property from terah.
-    delete terah[eyecolor]
-6. Add a spouse property to adam and assign it the value of terah.
-      adam [spouse] = terah
-7. Add a children property to terah and and use object literal notation to assign 
-   this variable the value of a JavaScript Object object with no properties
-    
-8. Add a carson property to the value of the terah children property and assign it 
-  the value of an object with the property name with a value of "Carson".
-    terah [children] = carson
-9. Add a carter property to the value of the terah children property and assign it 
-   the value of an object with the property name with a value of "Carter".
-    treah children += carter
-10. Add a colton property to the value of the terah children property and assign it 
-    the value of an object with the property name with a value of "Colton".
-    terah children colton
-11. Add a children property to adam and assign it the value of terah children.
-     adam [children] =  terah[children]
-
-*/
+// Pseudocode
+// 
+// set secretNumber to 7;
+// set password to 'just open the door';
+// set allowed in to false;
+// set members to an empty array;
+// create function to add members:
+  // function newMember means
+  //     push new member to list of members. 
 
 // __________________________________________
 // Write your code below.
 
-var adam = {};
+// var secretNumber = 7;
 
-adam.name = 'Adam';
+// var password = 'just open the door';
 
-terah.spouse = adam; 
-
-terah.weight = 125;
-
-delete terah.eyeColor;
-
-adam.spouse = terah;
-
-var children = {};
-
-terah.children = children;
-
-var carson = {};
-
-terah.children.carson = carson;
-
-terah.children.carson.name = 'Carson';
-
-var carter = {};
-
-terah.children.carter = carter;
-
-terah.children.carter.name = 'Carter';
-
-var colton = {};
-
-terah.children.colton = colton;
-
-terah.children.colton.name = 'Colton';
-
-adam.children = terah.children;
+// var allowedIn = false;
 
 
 
+// var members = [];
 
+// members.push('John');
 
+// members.push('Alex');
 
+// members.push('Guy in Members Only jacket');
+
+// members.push('Mary');  
 
 
 // __________________________________________
-// Reflection: Use the reflection guidelines
-// 
-// This was a really fun excercize once I figured out some logistical issues. 
-// I knew almost nothing about manipulating objects in JS and now I feel like I have a 
-// pretty good grasp. I have done a bit of that using Ruby so I caught on fast. It took 
-// me a minute to figure out the logic with the nested objects, and figuring it out was
-// exciting. It was helpful that the examples are actually someones kids. I used Stack 
-// Overflow to get some quick answers for syntax but the one explanation DBC provided 
-// were great. 
+// Refactored Code: Include a refactored version (or justification of your original code) here. 
+
+
+var secretNumber = 7;
+
+var password = 'just open the door';
+
+var allowedIn = false;
+
+var members = [];
+
+var addMembers = function(name) {
+    members.push(name);
+};
+
+addMembers('John');
+
+addMembers('Alex');
+
+addMembers('Guy in Members Only Jacket');
+
+addMembers('Mary');
+
+console.log(members);
+
+// __________________________________________
+// Reflection: Use the reflection guidelines to write a reflection here. 
+// This was a fun excercise. I had a GPS today where one member didn't show so I got an 
+// hour of JS tutoring which was very helpful for doing thing. 
+
+// First I Pseudocoded and then started coding. The first way I solved it was to call .push on
+// members with the names as parameters. This wasn't DRY as it could be, so I wrote a function
+// to add members, and just called that. I imagine this would scale better and be easier to 
+// change if needed. 
 // 
 // 
 // 
@@ -113,6 +79,7 @@ adam.children = terah.children;
 
 // __________________________________________
 // Driver Code:  Do not alter code below this line.
+
 function assert(test, message, test_number) {
   if (!test) {
     console.log(test_number + "false");
@@ -123,70 +90,55 @@ function assert(test, message, test_number) {
 }
 
 assert(
-  (adam instanceof Object),
-  "The value of adam should be an Object.",
+  (typeof secretNumber === 'number'),
+  "The value of secretNumber should be a number.",
   "1. "
 )
 
 assert(
-  (adam.name === "Adam"),
-  "The value of the adam name property should be 'Adam'.",
+  secretNumber === 7,
+  "The value of secretNumber should be 7.",
   "2. "
 )
 
 assert(
-  terah.spouse === adam,
-  "terah should have a spouse property with the value of the variable adam.",
+  typeof password === 'string',
+  "The value of password should be a string.",
   "3. "
 )
 
 assert(
-  terah.weight === 125,
-  "The terah weight property should be 125.",
+  password === "just open the door",
+  "The value of password should be 'just open the door'.",
   "4. "
 )
 
 assert(
-  terah.eyeColor === undefined,
-  "The terah eyeColor property should be removed.",
+  typeof allowedIn === 'boolean',
+  "The value of allowedIn should be a boolean.",
   "5. "
 )
 
 assert(
-  terah.spouse.spouse === terah,
-  "The terah spouse property's value spouse property should be terah.",
+  allowedIn === false,
+  "The value of allowedIn should be false.",
   "6. "
 )
 
 assert(
-  (terah.children instanceof Object),
-  "The value of the terah children property should be an Object.",
+  members instanceof Array,
+  "The value of members should be an array",
   "7. "
 )
 
 assert(
-  terah.children.carson.name === "Carson",
-  "The terah children property should have a carson property with its own property name with a value of 'Carson'.",
+  members[0] === "John",
+  "The first element in the value of members should be 'John'.",
   "8. "
 )
 
 assert(
-  terah.children.carter.name === "Carter",
-  "The terah children property should have a carter property with its own property name with a value of 'Carter'.",
+  members[3] === "Mary",
+  "The fourth element in the value of members should be 'Mary'.",
   "9. "
 )
-
-assert(
-  terah.children.colton.name === "Colton",
-  "The terah children property should have a colton property with its own property name with a value of 'Colton'.",
-  "10. "
-)
-
-assert(
-  adam.children === terah.children,
-  "The value of the adam children property should be the value of the terah children property",
-  "11. "
-)
-
-console.log("\nHere is your final terah object:")
-console.log(terah)
