@@ -25,8 +25,12 @@ var Client = function(name, age, quote){
 
 var shooterMcGavin = new Client("Shooter McGavin", 48, "Just stay out of my way... or you'll pay. Listen to what I say.");
 
+<<<<<<< HEAD:week_3/8_gps1_2/our_solution.js
 console.log(actor3);
 console.log(shooterMcGavin);
+=======
+// 0. "YOU SIGNED... WHO?!"
+>>>>>>> upstream/master:week_3/9_gps1_2/our_solution.js
 
 var AddressBook = function(){
     var clients = [];
@@ -39,6 +43,10 @@ AddressBook.addContact(shooterMcGavin);
 console.log(AddressBook);
 
 
+<<<<<<< HEAD:week_3/8_gps1_2/our_solution.js
+=======
+// 1. "Here they Come!"
+>>>>>>> upstream/master:week_3/9_gps1_2/our_solution.js
 
 //fjkehf
 
@@ -60,6 +68,10 @@ var actor3 = {
     quote: "...So you're telling me there's a chance? YEAH!"
     };
 
+<<<<<<< HEAD:week_3/8_gps1_2/our_solution.js
+=======
+// 2. "TIME IS MONEY!"
+>>>>>>> upstream/master:week_3/9_gps1_2/our_solution.js
 
 var Client = function(name, age, quote){
   this.name = name;
@@ -68,6 +80,7 @@ var Client = function(name, age, quote){
 };
 
 var shooterMcGavin = new Client("Shooter McGavin", 48, "Just stay out of my way... or you'll pay. Listen to what I say.");
+<<<<<<< HEAD:week_3/8_gps1_2/our_solution.js
 
 console.log(actor3);
 console.log(shooterMcgavin);
@@ -102,3 +115,27 @@ ourAddressBook.addContact(client1);
 ourAddressBook.addContact(client2);
 ourAddressBook.addContact(client3);
 ourAddressBook.printContacts();
+=======
+shooterMcGavin.constructor === Client;
+shooterMcGavin.age === 48;
+shooterMcGavin.quote === "Just stay out of my way... or you'll pay. Listen to what I say.";
+
+
+
+
+
+// 3. "SHOW 'EM OFF!"
+
+
+
+
+
+// 4. "But wait, there's more!"
+
+
+
+// 5.  ** BONUS **
+
+
+//  6.  Your Reflection:
+>>>>>>> upstream/master:week_3/9_gps1_2/our_solution.js
