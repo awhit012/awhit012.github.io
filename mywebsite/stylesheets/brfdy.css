@@ -64,3 +64,13 @@ img:hover {
   width: auto;
   height: 310px;
 }
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
