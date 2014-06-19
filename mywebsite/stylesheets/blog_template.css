@@ -21,29 +21,27 @@ body {
 
 .icons {
     float: right;
-    margin: 10%;
+    margin: 15%;
 }
 
 
 a:link {
     text-decoration: none;
-    color: black;
+    color: #d9b860;
 }
 
 a:visited {
-    color: black;
+    color: #d9b860;
 }
 
 a:hover {
-    color: gray;
+    color: #CCCCFF;
 }
 
 article {
     font-family: Garamond, serif;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 5% 10% 5% 10%;
     background-color: white;
-    margin: 5%;
     padding: 5%;
 }
 
