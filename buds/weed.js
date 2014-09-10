@@ -3,7 +3,7 @@ HIGH_CHART = ["You are sober as hell.", "You are barely feelin' it.", "You are a
 timeSinceLastSmoke = 0
 timeSinceLastWater = 0
 
-function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit, cash, moisture ) {
+function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit, cash ) {
 
   var that = this
 
@@ -15,16 +15,11 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
   this.highnessDigit = highnessDigit;
   this.cash = cash;
 
-  this.moisture = moisture
-
-
-
   this.grow = function() {
     that.ageInWeeks += 1;
     that.heightInInches += .5;
     that.addBuds();
     that.trackTimeSinceLastSmoke();
-    that.trackTimeSinceLastWater();
     that.UpdateDisplay();
   }
 
@@ -42,22 +37,6 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
       timeSinceLastSmoke = 0;
       that.updateHighnessLevel();
     }
-  }
-
-  this.water = function(){
-    that.moisture = 10;
-  }
-
-  this.trackTimeSinceLastWater = function(){
-    timeSinceLastWater +=1
-    if (timeSinceLastWater >= 10){
-      that.dryOut();
-    }
-  }
-  this.dryOut = function(){
-    that.moisture -= .1;
-    // $('#water-button').css("opacity", that.moisture )
-    debugger
   }
 
   this.harvest = function(){
@@ -105,17 +84,15 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     $('#age-display').html(this.ageInWeeks)
     $('#height-display').html(this.heightInInches)
     $('#buds-on-plant-display').html(this.buds)
-    $('#moisture-level-display').html(this.moisture)
     $('#harvested-buds-display').html(this.budsInStash)
     $('#higness-display').html(this.highnessLevel)
     $('#cash-display').html('$' + this.cash)
-    console.log(timeSinceLastSmoke)
   }
 }
 
 
 $( document ).ready(function() {
-  var George = new WeedPlant( 0, 0, 0, 0, 0, 0, 1.0 );
+  var George = new WeedPlant( 0, 0, 0, 0, 0, 0 );
   growInterval = 10000;
   setInterval(George.grow, growInterval);
 
@@ -127,8 +104,5 @@ $( document ).ready(function() {
   })
   $( "#sell-button" ).click(function(){
     George.sell();
-  })
-  $( "#water-button" ).click(function(){
-    George.water();
   })
 });
