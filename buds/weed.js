@@ -74,7 +74,6 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
   }
 
   this.increaseHighnessLevel = function(){
-    // var highnessLevelIncrease = that.highnessDigit += Math.round(that.budsInStash / 10)
     if(that.highnessDigit += Math.round(that.budsInStash / 10) < HIGH_CHART.length){
       that.highnessDigit += Math.round(that.budsInStash / 10)
       that.updateHighnessLevel();
@@ -83,17 +82,16 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
       that.highnessDigit = HIGH_CHART.length - 1;
       that.updateHighnessLevel
     }
-
-    this.updateHighnessLevel = function(){
-      that.highnessLevel = HIGH_CHART[that.highnessDigit];
-    }
-
-    this.sell = function(){
-      that.cash += that.budsInStash * 10
-      that.budsInStash = 0;
-    }
-
   }
+  this.updateHighnessLevel = function(){
+    that.highnessLevel = HIGH_CHART[that.highnessDigit];
+  }
+
+  this.sell = function(){
+    that.cash += that.budsInStash * 10
+    that.budsInStash = 0;
+  }
+
 
   this.UpdateDisplay = function(){
     $('#age-display').html(this.ageInWeeks);
