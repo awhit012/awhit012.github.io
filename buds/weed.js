@@ -1,7 +1,9 @@
+// MODEL
+
 HIGH_CHART = ["You are sober as hell.", "You are barely feelin' it.", "You are a little toasty.", "You are half-baked.", "You are kinda blazed.", "You are stupid geeked.", "You have no idea what's goin' on.", "You need to be reminded that no one has ever died from a overdose of weed."]
 
 timeSinceLastSmoke = 0
-timeSinceLastWater = 0
+
 
 function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit, cash ) {
 
@@ -24,7 +26,7 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
   }
 
   this.addBuds = function(){
-    if (that.ageInWeeks >= 6) {
+    if (that.ageInWeeks >= 2) {
       that.buds +=1;
     }
   }
@@ -55,29 +57,28 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     if (growInterval >= budsInStash * 10) {
       growInterval -= budsInStash * 10
     }
-    console.log(that.highnessDigit)
-    console.log(growInterval)
   }
 
   this.increaseHighnessLevel = function(){
+    // var highnessLevelIncrease = that.highnessDigit += Math.round(that.budsInStash / 10)
     if(that.highnessDigit += Math.round(that.budsInStash / 10) < HIGH_CHART.length){
       that.highnessDigit += Math.round(that.budsInStash / 10)
       that.updateHighnessLevel();
     }
     else {
       that.highnessDigit = HIGH_CHART.length - 1;
-      that.updateHighnessLevel();
-    };
-    console.log(that.highnessLevel)
-  }
+      that.updateHighnessLevel
+    }
 
-  this.updateHighnessLevel = function(){
-    that.highnessLevel = HIGH_CHART[that.highnessDigit];
-  }
+    this.updateHighnessLevel = function(){
+      that.highnessLevel = HIGH_CHART[that.highnessDigit];
+    }
 
-  this.sell = function(){
-    that.cash += that.budsInStash * 5
-    that.budsInStash = 0;
+    this.sell = function(){
+      that.cash += that.budsInStash * 5
+      that.budsInStash = 0;
+    }
+
   }
 
   this.UpdateDisplay = function(){
@@ -89,20 +90,21 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     $('#cash-display').html('$' + this.cash)
   }
 }
-
+// CONTROLLER
 
 $( document ).ready(function() {
-  var George = new WeedPlant( 0, 0, 0, 0, 0, 0 );
-  growInterval = 10000;
-  setInterval(George.grow, growInterval);
+  var ThisPlant = new WeedPlant( 0, 0, 0, 0, 0, 0 );
+
+  growInterval = 3000;
+  setInterval(ThisPlant.grow, growInterval);
 
   $( "#harvest-button" ).click(function(){
-    George.harvest();
+    ThisPlant.harvest();
   })
   $( "#smoke-button" ).click(function(){
-    George.smoke();
+    ThisPlant.smoke();
   })
   $( "#sell-button" ).click(function(){
-    George.sell();
+    ThisPlant.sell();
   })
 });
