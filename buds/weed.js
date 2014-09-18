@@ -83,6 +83,7 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
       that.updateHighnessLevel
     }
   }
+
   this.updateHighnessLevel = function(){
     that.highnessLevel = HIGH_CHART[that.highnessDigit];
   }
@@ -91,6 +92,7 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     that.cash += that.budsInStash * 10
     that.budsInStash = 0;
   }
+
 
 
   this.UpdateDisplay = function(){
