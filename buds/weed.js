@@ -33,7 +33,7 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
 
   this.getImage = function(){
 
-    if (that.ageInWeeks % 10 == 0) {
+    if (that.ageInWeeks % 15 == 0) {
       imageIndex += 1
       currentImage = IMAGES[imageIndex]
     }
@@ -52,12 +52,17 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
       that.highnessDigit -= 1;
       timeSinceLastSmoke = 0;
       that.updateHighnessLevel();
+
+      if ($audio.volume >= .1){
+        $audio.volume -= .1;
+      }
     }
   }
 
   this.harvest = function(){
     that.budsInStash += that.buds;
     that.buds = 0;
+    that.UpdateDisplay();
   }
 
   this.smoke = function(){
@@ -65,6 +70,7 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     that.speedUpTime();
     that.increaseHighnessLevel();
     that.budsInStash = 0;
+    that.UpdateDisplay();
   }
 
   this.speedUpTime = function(){
@@ -74,13 +80,21 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
   }
 
   this.increaseHighnessLevel = function(){
-    if(that.highnessDigit += Math.round(that.budsInStash / 10) < HIGH_CHART.length){
+
+    if(that.budsInStash == 0){
+      return
+    }
+
+    if(that.highnessDigit + Math.round(that.budsInStash / 10) < HIGH_CHART.length){
       that.highnessDigit += Math.round(that.budsInStash / 10)
       that.updateHighnessLevel();
+      that.updateSound();
     }
     else {
-      that.highnessDigit = HIGH_CHART.length - 1;
-      that.updateHighnessLevel
+      that.highnessDigit = (HIGH_CHART.length - 1);
+      that.updateHighnessLevel();
+      that.updateSound();
+
     }
   }
 
@@ -88,12 +102,23 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     that.highnessLevel = HIGH_CHART[that.highnessDigit];
   }
 
+  this.updateSound = function(){
+    if ($audio.volume > .7) {
+      $audio.volume = 1
+    }
+    else {
+      $audio.volume += .2
+    }
+  }
+
   this.sell = function(){
     that.cash += that.budsInStash * 10
     that.budsInStash = 0;
+    that.UpdateDisplay();
   }
 
 
+//VIEW
 
   this.UpdateDisplay = function(){
     $('#age-display').html(this.ageInWeeks);
@@ -108,9 +133,12 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
 // CONTROLLER
 
 $( document ).ready(function() {
-  var ThisPlant = new WeedPlant( 0, 0, 0, 0, 0, 0, 0 );
+  var ThisPlant = new WeedPlant( 0, 0, 0, 0, 0.0, 0, 0 );
 
-  growInterval = 3000;
+  $audio = $('#audio')[0];
+  $audio.volume = 0
+
+  growInterval = 300;
   setInterval(ThisPlant.grow, growInterval);
 
   $( "#harvest-button" ).click(function(){
