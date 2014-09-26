@@ -7,6 +7,8 @@ IMAGES = [ "http://www.weedist.com/wp-content/uploads/2012/07/CannabisSeedling-T
 "http://www.marijuana-picture.com/gallery/marijuana_plant_picture/images/ready_to_harvest.jpg",
 "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/10/8/1349734493183/Cannabis-plant--008.jpg"  ]
 
+INIT = [0, 0, 0, 0, 0.0, 0, 0]
+
 timeSinceLastSmoke = 0;
 
 function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit, cash, imageIndex ) {
@@ -133,12 +135,12 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
 // CONTROLLER
 
 $( document ).ready(function() {
-  var ThisPlant = new WeedPlant( 0, 0, 0, 0, 0.0, 0, 0 );
+  var ThisPlant = new WeedPlant(INIT);
 
   $audio = $('#audio')[0];
   $audio.volume = 0
 
-  growInterval = 300;
+  growInterval = 2000;
   setInterval(ThisPlant.grow, growInterval);
 
   $( "#harvest-button" ).click(function(){
