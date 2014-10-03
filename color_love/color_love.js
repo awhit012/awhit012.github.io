@@ -20,6 +20,7 @@ $(document).ready(function () {
 
   $('td').hover(function(){
     $(this).removeClass();
+    $(this).addClass(colorClasses[Math.floor(Math.random()*colorClasses.length)]);
     $(this).toggleClass("quatro")
   })
 
