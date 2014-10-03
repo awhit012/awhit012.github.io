@@ -1,3 +1,6 @@
+var WeedPlant = WeedPlant || {
+}
+
 // MODEL
 
 HIGH_CHART = ["You are sober as hell.", "You are barely feelin' it.", "You are a little toasty.", "You are half-baked.", "You are kinda blazed.", "You are stupid geeked.", "You have no idea what's goin' on.", "You need to be reminded that no one has ever died from a overdose of weed."]
@@ -7,11 +10,16 @@ IMAGES = [ "http://www.weedist.com/wp-content/uploads/2012/07/CannabisSeedling-T
 "http://www.marijuana-picture.com/gallery/marijuana_plant_picture/images/ready_to_harvest.jpg",
 "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/10/8/1349734493183/Cannabis-plant--008.jpg"  ]
 
-INIT = [0, 0, 0, 0, 0.0, 0, 0]
-
 timeSinceLastSmoke = 0;
 
-function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit, cash, imageIndex ) {
+WeedPlant.Model = function( ageInWeeks
+                            , heightInInches
+                            , buds
+                            , budsInStash
+                            , highnessDigit
+                            , cash
+                            , imageIndex  ){
+
   var that = this
   currentImage = "http://www.weedist.com/wp-content/uploads/2012/07/CannabisSeedling-Time-Lapse-280x155.png"
 
@@ -30,7 +38,7 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     that.addBuds();
     that.trackTimeSinceLastSmoke();
     that.getImage();
-    that.UpdateDisplay();
+    WeedPlant.View();
   }
 
   this.getImage = function(){
@@ -118,38 +126,39 @@ function WeedPlant( ageInWeeks, heightInInches, buds, budsInStash, highnessDigit
     that.budsInStash = 0;
     that.UpdateDisplay();
   }
-
+}
 
 //VIEW
 
-  this.UpdateDisplay = function(){
-    $('#age-display').html(this.ageInWeeks);
-    $('#image-display').attr('src', currentImage );
-    $('#height-display').html(this.heightInInches);
-    $('#buds-on-plant-display').html(this.buds);
-    $('#harvested-buds-display').html(this.budsInStash);
-    $('#higness-display').html(this.highnessLevel);
-    $('#cash-display').html('$' + this.cash);
-  }
+WeedPlant.View = function(){
+  $('#age-display').html(WeedPlant.ageInWeeks);
+  $('#image-display').attr('src', currentImage );
+  $('#height-display').html(WeedPlant.heightInInches);
+  $('#buds-on-plant-display').html(WeedPlant.buds);
+  $('#harvested-buds-display').html(WeedPlant.budsInStash);
+  $('#higness-display').html(WeedPlant.highnessLevel);
+  $('#cash-display').html('$' + WeedPlant.cash);
 }
+
+
 // CONTROLLER
 
 $( document ).ready(function() {
-  var ThisPlant = new WeedPlant(INIT);
+  var ThisPlant = new WeedPlant.Model(0, 0, 0, 0, 0.0, 0, 0);
 
   $audio = $('#audio')[0];
   $audio.volume = 0
 
-  growInterval = 2000;
-  setInterval(ThisPlant.grow, growInterval);
+  growInterval = 200;
+  setInterval(WeedPlant.Model.grow, growInterval);
 
   $( "#harvest-button" ).click(function(){
-    ThisPlant.harvest();
+    WeedPlant.Model.harvest();
   })
   $( "#smoke-button" ).click(function(){
-    ThisPlant.smoke();
+    WeedPlant.Model.smoke();
   })
   $( "#sell-button" ).click(function(){
-    ThisPlant.sell();
+    WeedPlant.Model.sell();
   })
 });
