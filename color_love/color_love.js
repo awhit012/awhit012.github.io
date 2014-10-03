@@ -15,9 +15,19 @@ $(document).ready(function () {
       $(this).addClass(shapeClasses[Math.floor(Math.random()*shapeClasses.length)]);
     });
 
-    console.log(hoverCount);
     checkCount();
   })
+
+  $('td').hover(function(){
+    $(this).removeClass();
+    $(this).toggleClass("quatro")
+  })
+
+  $('td').mouseout(function(){
+    $(this).removeClass();
+    $(this).toggleClass(shapeClasses[Math.floor(Math.random()*shapeClasses.length)])
+  })
+
 
   var checkCount = function(){
     if (hoverCount == 10 ) {
