@@ -25,6 +25,7 @@ $(document).ready(function () {
 
   $('td').mouseout(function(){
     $(this).removeClass();
+    $(this).addClass(colorClasses[Math.floor(Math.random()*colorClasses.length)]);
     $(this).toggleClass(shapeClasses[Math.floor(Math.random()*shapeClasses.length)])
   })
 
