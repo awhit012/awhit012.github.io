@@ -55,7 +55,9 @@ function sudokuSolver(){
   }
 
   this.findSolvedSquare = function(row){
-    console.log(row)
+    rowLength = row.length
+    for(var i = 0; i < rowLength; i++){
+    console.log(i)
   }
 
 
