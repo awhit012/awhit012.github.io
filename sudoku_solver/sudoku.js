@@ -32,6 +32,7 @@ function sudokuSolver(){
     this.allRows = [this.row1, this.row2, this.row3]
 
     that.attackRow(that.allRows);
+    that.devideIntocollumns(that.allRows)
 
   };
 
@@ -41,12 +42,8 @@ function sudokuSolver(){
     for(var i = 0; i < rowsLength; i++){
       that.generatePossibles( rows[i], rowsLength )
     }
-
   }
 
-  // this.attackCollumn = function(collumns){
-  //   var collumnsLength
-  // }
 
   this.generatePossibles = function(row, number){
     var possibleAnswers = []
@@ -87,6 +84,25 @@ function sudokuSolver(){
       }
     }
     console.log(row)
+  }
+
+  this.devideIntocollumns = function(array){
+    this.collumn1 = [that.allRows[0][0], that.allRows[1][0], that.allRows[2][0]]
+    this.collumn2 = [that.allRows[0][1], that.allRows[1][1], that.allRows[2][1]]
+    this.collumn3 = [that.allRows[0][2], that.allRows[1][2], that.allRows[2][2]
+    this.allCollumns = [this.collumn1, this.collumn2, this.collumn3]
+
+    console.log(that.allCollumns)
+    that.attackRow(that.allRows);
+
+  };
+
+  this.attackCollumn = function(collumns){
+    var collumnsLength = rows.length
+
+    for(var i = 0; i < collumnsLength; i++){
+      that.generatePossibles( rows[i], collumnsLength )
+    }
   }
 
 };
