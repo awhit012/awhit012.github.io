@@ -33,6 +33,8 @@ function sudokuSolver(){
 
     console.log(that.allRows);
 
+    that.solveRow(that.allRows);
+
   }
 
 };
