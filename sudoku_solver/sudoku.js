@@ -44,13 +44,15 @@ function sudokuSolver(){
 
   }
 
+  // this.attackCollumn = function(collumns){
+  //   var collumnsLength
+  // }
+
   this.generatePossibles = function(row, number){
     var possibleAnswers = []
     for(var i = 0; i < number; i++){
       possibleAnswers.push(i + 1)
     };
-
-    console.log(possibleAnswers);
 
     that.findSolvedSquare(row, possibleAnswers);
 
@@ -63,8 +65,7 @@ function sudokuSolver(){
         that.removeSolvedSquareFromPossibleAnswers(row, row[i], possibleAnswers)
       }
     };
-    console.log('%' + possibleAnswers)
-    // that.guessSquare(row, possibleAnswers)
+    that.guessSquare(row, possibleAnswers)
 
   };
 
@@ -77,11 +78,21 @@ function sudokuSolver(){
     return possibleAnswers
   }
 
+  this.guessSquare = function( row, possibleAnswers ) {
+    for (var i = 0; i < length; i++){
+      if (row[i] == 0){
+        row[i] = possibleAnswers[0];
+        that.findSolvedSquare( row, possibleAnswers);
+        break
+      }
+    }
+    console.log(row)
+  }
 
 };
 
 
 var myPuzzle = new sudokuSolver();
-myPuzzle.solve('000000001')
+myPuzzle.solve('030000001')
 
 
