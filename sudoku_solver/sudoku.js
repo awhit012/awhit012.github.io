@@ -31,11 +31,20 @@ function sudokuSolver(){
     this.row3 = [that.parsedArray[6], that.parsedArray[7], that.parsedArray[8]]
     this.allRows = [this.row1, this.row2, this.row3]
 
-    that.generatePossibles(this.allRows.length)
+    that.attackRow(that.allRows);
 
   };
 
-  this.generatePossibles = function(number){
+  this.attackRow = function(rows){
+    var rowsLength = rows.length
+
+    for(var i = 0; i < rowsLength; i++){
+      that.generatePossibles( rows[i], rowsLength )
+    }
+
+  }
+
+  this.generatePossibles = function(row, number){
     var possibleAnswers = []
     for(var i = 0; i < number; i++){
       possibleAnswers.push(i + 1)
@@ -43,21 +52,29 @@ function sudokuSolver(){
 
     console.log(possibleAnswers);
 
-    that.attackRow(that.allRows);
+    that.findSolvedSquare(row, possibleAnswers);
 
   }
 
-  this.attackRow = function(rows){
-
-    for(var i = 0; i < rows.length; i++){
-      that.findSolvedSquare(rows[i]);
-    }
-  }
-
-  this.findSolvedSquare = function(row){
-    rowLength = row.length
+  this.findSolvedSquare = function(row, possibleAnswers){
+    var rowLength = row.length
     for(var i = 0; i < rowLength; i++){
-    console.log(i)
+      if (row[i] !== 0){
+        that.removeSolvedSquareFromPossibleAnswers(row, row[i], possibleAnswers)
+      }
+    };
+    console.log('%' + possibleAnswers)
+    // that.guessSquare(row, possibleAnswers)
+
+  };
+
+  this.removeSolvedSquareFromPossibleAnswers = function( row, solvedSquare, possibleAnswers){
+    var indexOfSolution = possibleAnswers.indexOf(solvedSquare);
+
+    if (indexOfSolution > -1){
+      possibleAnswers.splice(indexOfSolution, 1);
+    }
+    return possibleAnswers
   }
 
 
@@ -68,8 +85,3 @@ var myPuzzle = new sudokuSolver();
 myPuzzle.solve('000000001')
 
 
-// hash = { row1 => [1,2,3],
-//       ...}
-
-// hash = { 1 => {row1 => nil, row2 => nil, row3 => true },
-//       ...}
