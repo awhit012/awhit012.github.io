@@ -1,36 +1,76 @@
 body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+  color: black;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkgAAfIN4CZcMoFDFGNEmsikCCuBRi6EdXiM0JYE3ICnEqQlZItmcIuhFXUGH4GqcTCHkGrhEAviEMC5ZH8QIAAAAASUVORK5CYII=)
+   repeat;
   background-color: #2EB1FF;
 }
 
-h1, h2, h3 {
-  font-family: Helvetica;
-  text-align: center;
-  color: black;
+
+
+header {
+  text-align: left;
+  margin: 2em;
 }
 
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #FF00FF;
+}
 h1 {
-  font-size: 5em;
+  font-size: 4em;
+  font-style: italic;
+  display:inline;
+}
+
+h2:hover {
+  color: #FDFDFD;
 }
 
 h2 {
   font-size: 3em;
+  margin-top: 1em;
+
 }
 
 h3 {
   font-size: 2em;
+  font-variant: small-caps;
+  display:inline;
+
 }
 
 #table {
-  font-family: Helvetica;
   text-align: left;
   color: black;
   font-size: 1em;
   width: 60%;
   margin-left: 14em;
+  margin-bottom: 3em;
+  margin-top: 3em;
+  border: .1em black solid;
+  padding: 1em;
+  border-radius: .2em;
 }
 
-a {
-  text-decoration: none;
+#a:hover, #b:hover, #c:hover, #d:hover, #e:hover, #f:hover, #g:hover, #h:hover, #i:hover, #j:hover, #k:hover, #l:hover, #m:hover{
+  color: #FF00FF;
+}
+
+#n:hover, #o:hover, #p:hover {
+  font-size: 1.6em;
 }
 
 
