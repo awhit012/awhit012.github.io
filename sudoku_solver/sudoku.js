@@ -87,28 +87,71 @@ function sudokuSolver(){
   }
 
   this.devideIntocollumns = function(array){
-    this.collumn1 = [that.allRows[0][0], that.allRows[1][0], that.allRows[2][0]]
-    this.collumn2 = [that.allRows[0][1], that.allRows[1][1], that.allRows[2][1]]
-    this.collumn3 = [that.allRows[0][2], that.allRows[1][2], that.allRows[2][2]
+    this.collumn1 = [that.allRows[0][0], that.allRows[1][0], that.allRows[2][0]];
+    this.collumn2 = [that.allRows[0][1], that.allRows[1][1], that.allRows[2][1]];
+    this.collumn3 = [that.allRows[0][2], that.allRows[1][2], that.allRows[2][2]];
     this.allCollumns = [this.collumn1, this.collumn2, this.collumn3]
 
     console.log(that.allCollumns)
-    that.attackRow(that.allRows);
+    that.attackCollumn(that.allCollumns);
 
   };
 
   this.attackCollumn = function(collumns){
-    var collumnsLength = rows.length
+    var collumnsLength = collumns.length
 
     for(var i = 0; i < collumnsLength; i++){
-      that.generatePossibles( rows[i], collumnsLength )
+      that.generatePossibles( collumns[i], collumnsLength )
+      that.findCollumnsWithNoDuplicates(collumns[i], i);
     }
   }
 
+  // find collumns with no duplicates
+  // kill all but collumns and rows with no duplicates,
+  // add back the original hints,
+  // restart whole thing
+
+  this.findCollumnsWithNoDuplicates = function(collumn, collumnIndex){
+    var i,
+    len=collumn.length,
+    out=[],
+    obj={};
+
+    for (i=0;i<len;i++) {
+      obj[collumn[i]]=0;
+    }
+    for (i in obj) {
+      out.push(i);
+    }
+
+    if (out.length == collumn.length){
+      console.log(collumn + ' is done')
+    }
+
+    else { that.removeGuessFromCollumn(collumn, collumnIndex) }
+
+  };
+
+  this.removeGuessFromCollumn = function(collumn, collumnIndex){
+    var collumnsLength = collumn.length
+    for(var i = 0; i < collumnsLength; i++){
+      if (collumn[i] != that.allRows[i][collumnIndex]){
+        collumn[i] = 0;
+      }
+    }
+    console.log('*' + collumn)
+  }
+
 };
-
-
 var myPuzzle = new sudokuSolver();
 myPuzzle.solve('030000001')
 
 
+
+// [ 1, 3, 2 ]
+// [ 1, 2, 3 ]
+// [ 2, 3, 1 ]
+
+// [ 0, 3, 2 ]
+// [ 0, 0, 3 ]
+// [ 0, 0, 1 ]
