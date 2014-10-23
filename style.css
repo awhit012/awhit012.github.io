@@ -1,1 +1,97 @@
-body{font-family:HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;text-align:center;color:#000;background:#2EB1FF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkgAAfIN4CZcMoFDFGNEmsikCCuBRi6EdXiM0JYE3ICnEqQlZItmcIuhFXUGH4GqcTCHkGrhEAviEMC5ZH8QIAAAAASUVORK5CYII=)}header{text-align:left;margin:2em}a{text-decoration:none}a:link,a:visited{color:#000}h1{font-size:4em;font-style:italic;display:inline}h2{font-size:3em;margin-top:1em}h3{font-size:2em;font-variant:small-caps;display:inline}#table{text-align:left;color:#000;font-size:1em;width:60%;margin-left:14em;margin-bottom:3em;margin-top:3em;border:.1em solid #000;padding:1em;border-radius:.2em}.fa{margin:.1em}
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+  color: black;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2NkgAAfIN4CZcMoFDFGNEmsikCCuBRi6EdXiM0JYE3ICnEqQlZItmcIuhFXUGH4GqcTCHkGrhEAviEMC5ZH8QIAAAAASUVORK5CYII=)
+  repeat;
+  background-color: #2EB1FF;
+}
+
+header {
+  text-align: left;
+  margin-top: -1em;
+  margin-left: 2em;
+  position: fixed;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+
+h1 {
+  font-size: 4em;
+  font-style: italic;
+  display:inline;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 1em;
+
+}
+
+h3 {
+  font-size: 2em;
+  font-variant: small-caps;
+  display:inline;
+
+}
+
+#table {
+  text-align: left;
+  color: black;
+  font-size: 1em;
+  width: 60%;
+  margin-left: 14em;
+  margin-bottom: 3em;
+  margin-top: 3em;
+  border: .1em black solid;
+  padding: 1em;
+  border-radius: .2em;
+}
+
+.fa {
+  margin: .1em;
+
+}
+
+.dots {
+  display: inline;
+  margin: 1em;
+  font-size: .6em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+  body {
+  }
+}
+
+
+@media (max-width: 600px) {
+  header {
+
+    text-align: center;
+    position: relative;
+    margin-top: 2em;
+    margin-left: 0px;
+
+  }
+
+  #table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
