@@ -30,7 +30,7 @@ h1 {
   font-size: 4em;
   letter-spacing: .2em;
   display:inline;
-  text-shadow: 1px 1px #444;
+  text-shadow: 2px 2px white;
   color: #222;
 }
 
@@ -50,6 +50,10 @@ h3 {
 }
 
 #table {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 100;
+  letter-spacing: .07em;
+  border-collapse: separate;
   text-align: left;
   font-size: 1em;
   width: 80%;
@@ -57,7 +61,7 @@ h3 {
   margin-left: auto;
   margin-bottom: auto;
   margin-top: 3em;
-  border: .1em #444 solid;
+  border-collapse: collapse;
   padding: 2em;
   border-radius: .2em;
   color: #222;
@@ -113,4 +117,9 @@ and (max-device-width : 480px) {
 
 a:hover, h2:hover, #a:hover, #b:hover, #c:hover, #d:hover, #e:hover, #f:hover, #g:hover, #h:hover, #i:hover, #j:hover, #k:hover, #l:hover, #m:hover{
   color: #FF00FF;
+}
+
+table, th, td {
+  border: .1em #444 solid;
+  padding: 1em;
 }
