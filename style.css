@@ -1,12 +1,14 @@
 body {
   font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   text-align: center;
-  background-image:url(http://upload.wikimedia.org/wikipedia/commons/8/81/Comet_67P_on_19_September_2014_NavCam_mosaic.jpg);
-  background-size: 2000px;
+  background-image:url(http://upload.wikimedia.org/wikipedia/commons/c/c5/PIA08409_North_Polar_Region_of_Enceladus.jpg);
+  background-size: 1000px;
   background-color: black;
-  background-position: -650px, 800px;
-  text-shadow: 0 1px 0.5px #FF00FF, 0 4px 6px black;
-  /*text-shadow: 4px 4px 4px black;*/
+  background-origin: border-box;
+  background-attachment: local;
+  background-position: -500px, 0px;
+  background-repeat: no-repeat;
+  text-shadow: 0 4px 6px black;
   margin: 2em;
 }
 
