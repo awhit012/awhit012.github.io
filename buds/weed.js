@@ -1,4 +1,6 @@
 var WeedPlant = WeedPlant || {};
+
+
 HIGH_CHART = ["You are sober as hell.", "You are barely feelin' it.", "You are a little toasty.", "You are half-baked.", "You are kinda blazed.", "You are stupid geeked.", "You have no idea what's goin' on.", "You need to be reminded that no one has ever died from a overdose of weed."];
 IMAGES = ["http://www.weedist.com/wp-content/uploads/2012/07/CannabisSeedling-Time-Lapse-280x155.png", "http://geek420.files.wordpress.com/2010/01/growingweed.jpg", "http://howtogrowmarijuana.com/wp-content/uploads/2012/12/Marijuana-vegging-light-cycle.jpg", "http://www.marijuana-picture.com/gallery/marijuana_plant_picture/images/ready_to_harvest.jpg", "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/10/8/1349734493183/Cannabis-plant--008.jpg"];
 timeSinceLastSmoke = 0;
