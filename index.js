@@ -7,7 +7,6 @@ window.onload = function(){
     element.style.backgroundPosition = x + 'px ' + y + 'px';
     // console.log(z.target)
   });
-    debugger
 };
 
 
