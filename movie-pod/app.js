@@ -56,7 +56,7 @@ App.prototype.addEventListenerToGetFavorites = function () {
 };
 
 App.prototype.getFavorites = function () {
-  this.XMLHelper('GET', 'http://localhost:4567/favorites', 'getFavoritesSuccess');
+  this.XMLHelper('GET', 'https://thismovieapi.herokuapp.com/favorites', 'getFavoritesSuccess');
 };
 
 App.prototype.getFavoritesSuccess = function(response){
@@ -180,7 +180,7 @@ App.prototype.addEventListenerToFavoriteButtons = function(){
 
 // send POST request to our API with the imdbID of the favorited movie
 App.prototype.favorite = function(movieID){
-  var url = "http://localhost:4567/favorite";
+  var url = "https://thismovieapi.herokuapp.com/favorite";
   var data = JSON.stringify({ name: this.myMovies[movieID].stats.title, oid: this.myMovies[movieID].stats.imdbID});
   this.XMLHelper('POST', url, 'favoriteSuccess', data);
 };
