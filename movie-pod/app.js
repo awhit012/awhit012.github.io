@@ -1,4 +1,6 @@
 const API = 'https://thismovieapi.herokuapp.com/'
+// const API = 'http://localhost:4567/'
+
 window.onload = function () {
   // when the window loads, create the App class,
   // save it in a variable, and execute the following functions on this instance of the class.
