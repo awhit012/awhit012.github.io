@@ -1,0 +1,3 @@
+MoviePod! A simple JS application for searching and favoriting movies, that talks to a decoupled Sinatra API.
+
+Deployed here: http://awhit012.github.io/movie-pod/index.html
